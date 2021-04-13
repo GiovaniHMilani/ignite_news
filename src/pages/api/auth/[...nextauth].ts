@@ -28,7 +28,7 @@ export default NextAuth({
               )
             ),
             q.Create(
-              q.Collection('user'),
+              q.Collection('users'),
               { data: { email } }
             ),
             q.Get(
@@ -41,7 +41,8 @@ export default NextAuth({
         )
 
         return true
-      } catch {
+      } catch (error) {
+        console.log(error)
         return false
       }
 
